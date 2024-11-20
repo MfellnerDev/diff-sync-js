@@ -206,10 +206,13 @@ window.onload = function () {
 
             var delay = parseInt($timeoutDelay.value);
 
+            // set the sync-cycle
             if (delay > 0) {
                 $timeoutIndicator.innerHTML = "Processing...";
+                // set a timeout for the delay
                 timeout = setTimeout(() => {
                     $timeoutIndicator.innerHTML = "Sent!";
+                    // send the patch to the server
                     sendPatch(value);
                 }, delay);
             } else {
